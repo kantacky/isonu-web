@@ -1,12 +1,16 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Sans_JP } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const noto = Noto_Sans_JP({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "!'s on U",
     description: "Eyes on you",
+    itunes: {
+        appId: '6469441884',
+        appArgument: 'https://isonu.kantacky.com/',
+    },
 };
 
 export default function RootLayout({
@@ -16,7 +20,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={inter.className}>{children}</body>
+            <body className={noto.className}>{children}</body>
         </html>
     );
 }
