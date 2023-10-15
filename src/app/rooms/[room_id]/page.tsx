@@ -6,7 +6,7 @@ export default function Room({
     params: { room_id: string }
 }) {
     return (
-        <main className=''>
+        <main className='container mx-auto m-4'>
             <Client room_id={params.room_id} />
         </main>
     )
