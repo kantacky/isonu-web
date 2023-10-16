@@ -15,15 +15,19 @@ export default function Client({
     const url: string = `https://isonu.kantacky.com/rooms/${room_id}?as=${as}`
 
     return (
-        <div className='h-screen grid place-items-center'>
-            <Link className='my-2 border-b p-1' href={url}>{url}</Link>
+        <div className='grid place-items-center h-screen p-4'>
+            <Link href={url}>
+                <p className='border-b p-1'>{url}</p>
+            </Link>
 
-            <div className='my-2'>
-                <QRCode url={url} />
-            </div>
+            <QRCode url={url} />
 
-            <Link className='my-2' href={'https://apps.apple.com/us/app/s-on-u/id6469441884'}>
+            <Link href={'https://apps.apple.com/us/app/s-on-u/id6469441884'}>
                 <Image src='/app-store-badge.svg' width={128} height={128} alt={'App Store Badge'} />
+            </Link>
+
+            <Link href={'https://testflight.apple.com/join/AF3uqqfD'}>
+                <p className='border-b p-1'>Join the beta testing on Testflight</p>
             </Link>
         </div>
     )
